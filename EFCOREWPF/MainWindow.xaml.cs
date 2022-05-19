@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EFCOREWPF.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,13 @@ namespace EFCOREWPF
         public MainWindow()
         {
             InitializeComponent();
+            //خوندن
+            var data = App.DbContext.Books.ToList();
+            foreach (var item in data)
+            {
+                App.DbContext.Entry(item).Reference(r => r.Category).Load();
+            }
+            dg.ItemsSource = data;  
         }
     }
 }

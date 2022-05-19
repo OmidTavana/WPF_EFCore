@@ -11,7 +11,7 @@ namespace EFCOREWPF.Models
     {
         [Required]
         public int ID { get; set; }
-        public Book Book { get; set; }
-        public Publisher Publisher { get; set; }
+        public virtual Book Book { get; set; }
+        public virtual Publisher Publisher { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace EFCOREWPF.Models
         public string Title { get; set; }
         [MaxLength(10000)]
         public string Des { get; set; }
-        public Category Category { get; set; }
-        public IEnumerable<RelBookPublisher> RelBookPublishers { get; set; }
+        public virtual Category Category { get; set; }
+        public virtual IEnumerable<RelBookPublisher> RelBookPublishers { get; set; }
     }
 }

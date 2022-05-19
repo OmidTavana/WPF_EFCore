@@ -13,6 +13,6 @@ namespace EFCOREWPF.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
-        public IEnumerable<RelBookPublisher> RelBookPublishers { get; set; }
+        public virtual IEnumerable<RelBookPublisher> RelBookPublishers { get; set; }
     }
 }
