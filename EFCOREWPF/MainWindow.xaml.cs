@@ -26,12 +26,15 @@ namespace EFCOREWPF
         {
             InitializeComponent();
             //خوندن
-            var data = App.DbContext.Books.ToList();
-            foreach (var item in data)
-            {
-                App.DbContext.Entry(item).Reference(r => r.Category).Load();
-            }
-            dg.ItemsSource = data;  
+        }
+        
+    
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var books = await App.DbContext.Books.Include(r=>r.Category).ToListAsync();
+            var groupedData = books.GroupBy(r => r.Category).Select(g => new { Title = g.Key.Title, Count = g.Count() }).ToList();
+            dg.ItemsSource = groupedData;
         }
     }
 }

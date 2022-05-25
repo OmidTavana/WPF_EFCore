@@ -7,30 +7,32 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
     Title="MainWindow"
-    Width="800"
+    Width="400"
     Height="450"
     mc:Ignorable="d">
-    <Grid>
+    <StackPanel>
+        <Button
+            Height="60"
+            Background="ForestGreen"
+            Click="Button_Click"
+            Content="نمایش دیتا"
+            FontSize="15"
+            FontWeight="Bold" />
         <telerik:RadGridView x:Name="dg" AutoGenerateColumns="False">
             <telerik:RadGridView.Columns>
 
                 <telerik:GridViewDataColumn
                     Width="auto"
                     DataMemberBinding="{Binding Title}"
-                    Header="عنوان"
-                    IsReadOnly="False" />
-                <telerik:GridViewDataColumn
-                    Width="auto"
-                    DataMemberBinding="{Binding Des}"
-                    Header="شرح"
-                    IsReadOnly="False" />
-                <telerik:GridViewDataColumn
-                    Width="auto"
-                    DataMemberBinding="{Binding Category.Title}"
                     Header="دسته بندی"
+                    IsReadOnly="False" />
+                <telerik:GridViewDataColumn
+                    Width="auto"
+                    DataMemberBinding="{Binding Count}"
+                    Header="تعداد"
                     IsReadOnly="False" />
 
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
-    </Grid>
+    </StackPanel>
 </Window>

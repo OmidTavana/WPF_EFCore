@@ -12,6 +12,6 @@ namespace EFCOREWPF.Models
         public int ID { get; set; }
         [MaxLength(100)]
         public string Title { get; set; }
-        public virtual IEnumerable<Book> Books { get; set; }
+        public  IEnumerable<Book> Books { get; set; }
     }
 }

@@ -14,5 +14,6 @@ namespace EFCOREWPF
     public partial class App : Application
     {
         public static DataContext DbContext = new DataContext();
+
     }
 }
